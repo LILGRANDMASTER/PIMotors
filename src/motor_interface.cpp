@@ -69,4 +69,14 @@ namespace motor_interface
 
     return (data & BIT_DIR_CKW);
   }
+
+  void Motor::reset(void)
+  {
+    uint8_t reg = REG_BITS_0;
+    uint8_t data = 0;
+
+    data = data | SET_RESET;
+
+    wiringPiI2CWriteBlockData(fd_, reg, &data , 1);
+  }
 }

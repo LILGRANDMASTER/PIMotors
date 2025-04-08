@@ -14,6 +14,7 @@ namespace motor_interface
 
 
     void setup(const std::string & name, uint8_t i2c_addr);
+    void reset();
 
     void set_speed(double rpm);
     void set_direction(bool dir);

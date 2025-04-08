@@ -10,6 +10,7 @@ int main()
 
     std::cout << "Testing motor interface..." << std::endl;
 
+    motor.reset();
     // Тест направления
     std::cout << "\nTesting direction control:" << std::endl;
     motor.set_direction(true);
