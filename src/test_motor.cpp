@@ -11,15 +11,6 @@ int main()
     std::cout << "Testing motor interface..." << std::endl;
 
     motor.reset();
-    // Тест направления
-    std::cout << "\nTesting direction control:" << std::endl;
-    motor.set_direction(true);
-    std::cout << "Direction set to CW: " << (motor.get_direction() ? "CW" : "CCW") << std::endl;
-    sleep(1);
-    
-    motor.set_direction(false);
-    std::cout << "Direction set to CCW: " << (motor.get_direction() ? "CW" : "CCW") << std::endl;
-    sleep(1);
 
     // Тест скорости
     std::cout << "\nTesting speed control:" << std::endl;
@@ -37,7 +28,8 @@ int main()
     }
 
     // Остановка
-    motor.set_speed(0.0);
+    motor.set_speed(0);
+
     std::cout << "\nTest completed. Motor stopped." << std::endl;
 
     return 0;

@@ -35,7 +35,11 @@ namespace motor_interface
 
     wiringPiI2CReadBlockData(fd_, reg, data, 2);
     vel = static_cast<double>((static_cast<int16_t>(data[1]) << 8) | static_cast<int16_t>(data[0]));
-    return vel;
+
+    if (vel > max_speed)
+      return (65536.0 - vel);
+    else
+      return vel;
   }
 
   uint32_t Motor::get_encoder_ticks(void)

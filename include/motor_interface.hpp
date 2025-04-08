@@ -22,7 +22,10 @@ namespace motor_interface
     double get_speed(void);
     uint32_t get_encoder_ticks(void);
     bool get_direction(void);
+
     private:
+    const double max_speed = 32767.0;
+    const double min_speed = -32767.0;
 
     struct Wheel {
       std::string name_ = "";
