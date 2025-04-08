@@ -14,11 +14,19 @@ int main()
 
     // Тест скорости
     std::cout << "\nTesting speed control:" << std::endl;
-    for(double rpm = 0.0; rpm <= 100.0; rpm += 10.0) {
+    for(double rpm = -20.0; rpm <= 20.0; rpm += 1.0) {
         motor.set_speed(rpm);
         std::cout << "Set speed: " << rpm << " RPM, Actual speed: " << motor.get_speed() << " RPM" << std::endl;
         sleep(1);
     }
+
+    // Тест скорости
+    std::cout << "\nTesting speed control:" << std::endl;
+    for(double rpm = 20.0; rpm <= -20.0; rpm -= 1.0) {
+        motor.set_speed(rpm);
+        std::cout << "Set speed: " << rpm << " RPM, Actual speed: " << motor.get_speed() << " RPM" << std::endl;
+        sleep(1);
+    }    
 
     // Тест энкодера
     std::cout << "\nTesting encoder:" << std::endl;
